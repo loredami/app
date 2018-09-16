@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { reducers, metaReducers, effects } from './store';
 import { environment } from '../environments/environment';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AuthModule,
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {metaReducers}),

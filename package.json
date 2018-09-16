@@ -8,7 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ngrx:feature": "ng generate @ngrx/schematics:feature ${name} --group=true --module=${module}"
+    "ngrx:action": "ng generate @ngrx/schematics:action ${name}",
+    "ngrx:effect": "ng generate @ngrx/schematics:effect ${name} --module=${module}",
+    "ngrx:reducer": "ng generate @ngrx/schematics:reducer ${name} --module=${module}",
+    "ngrx:feature": "ng generate @ngrx/schematics:feature ${name} --module=${module} --group=true"
   },
   "private": true,
   "dependencies": {
