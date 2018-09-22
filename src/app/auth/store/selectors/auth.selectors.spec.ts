@@ -10,6 +10,7 @@ import { User } from '../../models';
 describe('Auth Selectors', () => {
   let store: Store<fromReducers.State>;
   const user: User = {id: '1', name: 'foo', email: 'bar@baz.com'};
+  const payload = {username: 'foo', password: 'bar'};
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -46,11 +47,11 @@ describe('Auth Selectors', () => {
         result = value;
       });
       expect(result).toEqual(false);
-      store.dispatch(new fromActions.AuthLogin());
+      store.dispatch(new fromActions.AuthLogin(payload));
       expect(result).toEqual(true);
       store.dispatch(new fromActions.AuthLoginSuccess(user));
       expect(result).toEqual(false);
-      store.dispatch(new fromActions.AuthLogin());
+      store.dispatch(new fromActions.AuthLogin(payload));
       expect(result).toEqual(true);
       store.dispatch(new fromActions.AuthLoginFail({}));
       expect(result).toEqual(false);
@@ -64,11 +65,11 @@ describe('Auth Selectors', () => {
         result = value;
       });
       expect(result).toEqual(false);
-      store.dispatch(new fromActions.AuthLogin());
+      store.dispatch(new fromActions.AuthLogin(payload));
       expect(result).toEqual(false);
       store.dispatch(new fromActions.AuthLoginSuccess(user));
       expect(result).toEqual(true);
-      store.dispatch(new fromActions.AuthLogin());
+      store.dispatch(new fromActions.AuthLogin(payload));
       expect(result).toEqual(false);
       store.dispatch(new fromActions.AuthLoginFail({}));
       expect(result).toEqual(false);

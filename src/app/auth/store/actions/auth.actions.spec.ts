@@ -3,9 +3,11 @@ import * as fromAuth from './auth.actions';
 describe('Auth Actions', () => {
 
   it('AuthLogin', () => {
-    const action = new fromAuth.AuthLogin();
+    const payload = {username: 'foo', password: 'bar'};
+    const action = new fromAuth.AuthLogin(payload);
     expect({...action}).toEqual({
-      type: fromAuth.AuthActionTypes.AuthLogin
+      type: fromAuth.AuthActionTypes.AuthLogin,
+      payload
     });
   });
 

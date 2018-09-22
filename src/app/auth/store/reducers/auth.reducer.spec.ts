@@ -12,7 +12,8 @@ describe('Auth Reducer', () => {
 
   describe('AuthLogin', () => {
     it('should flag as loading', () => {
-      const action = new fromAuthActions.AuthLogin();
+      const payload = {username: 'foo', password: 'bar'};
+      const action = new fromAuthActions.AuthLogin(payload);
       const state = reducer(initialState, action);
       expect(state.loading).toEqual(true);
       expect(state.loaded).toEqual(false);

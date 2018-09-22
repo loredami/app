@@ -9,6 +9,9 @@ export enum AuthActionTypes {
 
 export class AuthLogin implements Action {
   readonly type = AuthActionTypes.AuthLogin;
+
+  constructor(public payload: { username: string, password: string }) {
+  }
 }
 
 export class AuthLoginSuccess implements Action {
