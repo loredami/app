@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { StoreModule, Store, select } from '@ngrx/store';
 
-import * as fromRoot from '../../../store/reducers';
+import * as fromRoot from 'core/store/reducers';
 import * as fromReducers from '../reducers';
 import * as fromActions from '../actions';
 import * as fromSelectors from './auth.selectors';
-import { User } from '../../models';
+import { User } from 'core/auth';
 
 describe('Auth Selectors', () => {
   let store: Store<fromReducers.State>;
