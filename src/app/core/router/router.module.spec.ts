@@ -4,7 +4,7 @@ describe('RouterModule', () => {
   let routerModule: RouterModule;
 
   beforeEach(() => {
-    routerModule = new RouterModule();
+    routerModule = RouterModule.forRoot();
   });
 
   it('should create an instance', () => {
